@@ -3,7 +3,7 @@
 """Calculates the sum of a list of integers and floats."""
 
 
-def sum_mixed_list(mxd_lst: list[typing.Union[int, float]]) -> float:
+def sum_mixed_list(mxd_lst: list[Union[int, float]]) -> float:
     """
     Calculate the sum of a list of integers and floats.
 
@@ -13,4 +13,4 @@ def sum_mixed_list(mxd_lst: list[typing.Union[int, float]]) -> float:
     Returns:
         float: The sum of the input list of integers and floats.
     """
-    return sum(mxd_lst)
+    return float(sum(mxd_lst))
