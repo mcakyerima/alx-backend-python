@@ -2,28 +2,30 @@
 
 ''' Safely gets a value from a dictionary based on given key. '''
 
-from typing import Mapping, Any, TypeVar, Union
+from typing import Any, Mapping, Union, TypeVar
 
-# Define a type variable for the return value
+
 T = TypeVar('T')
+Res = Union[Any, T]
+Def = Union[T, None]
 
 
-def safely_get_value(dct: Mapping, key: Any, default: T = None) -> Union[Any, T]:
-    """
-    Safely gets a value from a dictionary based on the given key.
+def safely_get_value(dct: Mapping, key: Any, default: Def = None ) -> Res:
+    '''Retrieve a value safely from a dictionary.
 
     Args:
         dct (Mapping): The input dictionary.
-        key (Any): The key to search for in the dictionary.
-        default (Optional[T], optional): The default value to return
-        if the key is not found. Defaults to None.
+        key (Any): The key to search for.
+        default (Union[T, None], optional): The default value if the
+        key is not found. Defaults to None.
 
     Returns:
-        Union[Any, T]: The value associated with the key in the
-        dictionary, or the default value if the key is not found.
-    """
+        Union[Any, T]: The value associated with the key in the dict,
+            or the default value if the key is not found.
+    '''
 
     if key in dct:
         return dct[key]
     else:
         return default
+
