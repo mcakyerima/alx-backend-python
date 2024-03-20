@@ -1,4 +1,4 @@
-#!/usr/bin/env python 3
+#!/usr/bin/env python3
 """ Task 2 """
 import asyncio
 from typing import List
